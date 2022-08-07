@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import Heading from '../../ui/Heading';
 import Card from '../../ui/Card';
 
-import SerachFilter from './SearchFilter';
-import Table from './Table';
+// import SerachFilter from './SearchFilter';
+import TransactionTable from './TransactionTable';
+import Api from '../../api/Api';
 
 class List extends PureComponent {
   state = {
@@ -15,9 +16,20 @@ class List extends PureComponent {
         currentPrice: '4,200,000원',
         datetime: '2019/01/20 08:23:22',
       },
+      {
+        id: 'btx_02',
+        name: '비트코인(BTX)',
+        totalPrice: '123,123,000,000원',
+        currentPrice: '4,200,000원',
+        datetime: '2019/01/20 08:23:22',
+      },
     ],
   };
-
+  componentDidMount() {
+    Api.get('/api/v1/posts', { params: { code: 'BTX' } }).then((response) =>
+      this.setState({ postResponses: response.data })
+    );
+  }
   render() {
     const { transactions } = this.state;
 
@@ -25,14 +37,18 @@ class List extends PureComponent {
       <div>
         <Heading level={3}>거래 현황</Heading>
         <Card vertical={4} horizontal={4}>
-          <SerachFilter />
+          {/* <SerachFilter /> */}
         </Card>
         <Card>
-          <Table transactions={transactions} />
+          <TransactionTable transactions={transactions} />
         </Card>
       </div>
     );
   }
 }
+
+List.defaultProps = {
+  transactions: [],
+};
 
 export default List;

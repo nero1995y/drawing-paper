@@ -14,15 +14,15 @@ const LoadingMessage = (
     <Text large>데이터를 불러들이고 있습니다.</Text>
   </Spacing>
 );
-class Table extends PureComponent {
+class TransactionTable extends PureComponent {
   render() {
     const { transactions } = this.props;
     return (
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="left">코인</TableCell>
-            <TableCell align="center">시가 총액</TableCell>
+            <TableCell align="left">제목</TableCell>
+            <TableCell align="center">내용</TableCell>
             <TableCell align="center">현재 시세</TableCell>
             <TableCell align="right">거래 시간</TableCell>
           </TableRow>
@@ -44,7 +44,7 @@ class Table extends PureComponent {
   }
 }
 
-Table.propTypes = {
+TransactionTable.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -56,4 +56,4 @@ Table.propTypes = {
   ),
 };
 
-export default withLoading(LoadingMessage)(Table);
+export default withLoading(LoadingMessage)(TransactionTable);

@@ -1,13 +1,8 @@
 import React from 'react';
-import AppLayout from './components/AppLayout';
-import Overview from './components/main/Overview';
+import Layout from './components/Layout/Layout';
 
 function App() {
-  return (
-    <AppLayout>
-      <Overview />
-    </AppLayout>
-  );
+  return <Layout></Layout>;
 }
 
 export default App;
