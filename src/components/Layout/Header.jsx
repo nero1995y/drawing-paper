@@ -1,10 +1,12 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
+import Tab from './Tabs/Tab';
 
 const Header = () => {
   return (
-    <div>
-      <h2>This is 헤더</h2>
-    </div>
+    <Box bg="gray.800" w="100%" p={5} color="white">
+      <Tab></Tab>
+    </Box>
   );
 };
 

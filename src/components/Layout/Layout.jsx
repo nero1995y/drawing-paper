@@ -1,12 +1,13 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import Section from './Section';
 
 const Layout = () => {
   return (
     <div>
       <Header />
-      <main> 레이아웃</main>
+      <Section />
       <Footer />
     </div>
   );
