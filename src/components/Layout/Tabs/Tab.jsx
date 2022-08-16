@@ -12,7 +12,7 @@ const Section = () => {
 
       <TabPanels>
         <TabPanel>
-          <p>one!</p>
+          <p>첫번째 탭</p>
         </TabPanel>
         <TabPanel>
           <p>two!</p>
