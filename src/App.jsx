@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './components/Layout/Layout';
+import Layout from './components/layout/Layout';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 // 2. `extendTheme` 적용하기
